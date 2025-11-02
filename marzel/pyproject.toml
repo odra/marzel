@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "marzel"
+version = "0.1.0"
+description = "The marshal of Bazel builds"
+authors = ["Leonardo Rossetti <lrossett@redhat.com>"]
+license = "Apache-2.0"
+readme = "../README.md"
+packages = [
+    {include = "marzel", from = "src/"}
+]
+
+[tool.poetry.scripts]
+marzel = "marzel.cli:run"
+
+[tool.poetry.dependencies]
+python = "^3.13"
+click = "^8.3.0"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.4.2"
+pytest-sugar = "^1.1.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
